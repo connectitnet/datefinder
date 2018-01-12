@@ -143,17 +143,17 @@ class DateFinder(object):
     def __init__(self, base_date=None):
         self.base_date = base_date
 
-    def find_dates(self, text, source=False, index=False, strict=False):
+    def find_dates(self, text, source=False, index=False, strict=False, vector=False):
 
         for date_string, indices, captures in self.extract_date_strings(text, strict=strict):
 
-            as_dt = self.parse_date_string(date_string, captures)
-            if as_dt is None:
+            as_dt_or_vec = self.parse_date_string(date_string, captures, vector)
+            if as_dt_or_vec is None:
                 ## Dateutil couldn't make heads or tails of it
                 ## move on to next
                 continue
 
-            returnables = (as_dt,)
+            returnables = (as_dt_or_vec,)
             if source:
                 returnables = returnables + (date_string,)
             if index:
@@ -208,7 +208,7 @@ class DateFinder(object):
         tzinfo_match = tz.gettz(tz_string)
         return datetime_obj.replace(tzinfo=tzinfo_match)
 
-    def parse_date_string(self, date_string, captures):
+    def parse_date_string(self, date_string, captures, vector=False):
         # For well formatted string, we can already let dateutils parse them
         # otherwise self._find_and_replace method might corrupt them
         try:
@@ -292,6 +292,7 @@ def find_dates(
     source=False,
     index=False,
     strict=False,
+    vector=False,
     base_date=None
     ):
     """
@@ -312,6 +313,11 @@ def find_dates(
         `July 2016` of `Monday` will not return datetimes.
         `May 16, 2015` will return datetimes.
     :type strict: boolean
+    :param vector:
+        Instead of returning datetimes, return lists of [year, month, day, hour, minute, second, millisecond, timezone]
+        with None values present where datefinder was unable to resolve. This allows postprocessing (e.g. guess and fill
+        in) of missing values to be undertaken explicitly
+    :type vector: boolean
     :param base_date:
         Set a default base datetime when parsing incomplete dates
     :type base_date: datetime
@@ -319,5 +325,7 @@ def find_dates(
     :return: Returns a generator that produces :mod:`datetime.datetime` objects,
         or a tuple with the source text and index, if requested
     """
+    if vector:
+        base_date = None
     date_finder = DateFinder(base_date=base_date)
-    return date_finder.find_dates(text, source=source, index=index, strict=strict)
+    return date_finder.find_dates(text, source=source, index=index, strict=strict, vector=vector)
