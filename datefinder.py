@@ -280,7 +280,14 @@ class DateFinder(object):
                 elif len(stamp) > 5:
                     match_str = re.sub(stamp, stamp[0:4] + ' ' + stamp[4:6] + ' ', match_str)
 
-            # Strip the output
+            # If the leading or trailing characters are delimiters, bump the indices and strip
+            ind0 = indices[0]
+            ind1 = indices[1]
+            if match_str[0] in self.STRIP_CHARS:
+                ind0 = ind0 + 1
+            if match_str[-1] in self.STRIP_CHARS:
+                ind1 = ind1 - 1
+            indices = (ind0, ind1)
             match_str = match_str.strip(self.STRIP_CHARS)
 
             # Save sanitized source string
