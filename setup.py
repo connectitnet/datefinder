@@ -23,7 +23,7 @@ setup(
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # https://packaging.python.org/en/latest/single_source_version.html
-    version='0.6.1',
+    version='0.6.2',
 
     description='Extract datetime objects from strings',
     long_description=long_description,
@@ -82,7 +82,7 @@ setup(
     # your project is installed. For an analysis of "install_requires" vs pip's
     # requirements files see:
     # https://packaging.python.org/en/latest/requirements.html
-    install_requires=['regex==2016.01.10', 'python-dateutil>=2.4.2', 'pytz'],
+    install_requires=['regex>=2017.02.08', 'python-dateutil>=2.4.2', 'pytz'],
 
     # List additional groups of dependencies here (e.g. development
     # dependencies). You can install these using the following syntax,
