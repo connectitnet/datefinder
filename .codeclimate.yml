@@ -1,2 +1,10 @@
+version: "2"
+plugins:
+  bandit:
+    enabled: true
+  pep8:
+    enabled: true
+  radon:
+    enabled: true
 exclude_patterns:
   - "docs/_build/"
