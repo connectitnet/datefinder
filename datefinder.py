@@ -21,9 +21,6 @@ class DateFinder(object):
         # Append text with a delimiter to make inputs consisting of solely a date work
         text = text + ' '
 
-        # Append text with a delimiter to make inputs consisting of solely a date work
-        text = text + ' '
-
         for date_string, indices, captures in self.extract_date_strings(text, strict=strict):
 
             as_dt = self.parse_date_string(date_string, captures)
