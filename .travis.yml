@@ -5,17 +5,18 @@ env:
     - CC_TEST_REPORTER_ID=e1c8a9a48f2f15cc798ee09cbb772ad9a707f842ebde7cb46bb0f0453aeddecc
 
 language: python
-python:
-  - "3.4"
-  - "3.5"
-  - "3.6"
-  
-# Enable 3.7 without globally enabling sudo and dist: xenial for other build jobs
 matrix:
   include:
-    - python: 3.7
-      dist: xenial
-      sudo: true
+  - python: 3.4
+    env: TOXENV=py34
+  - python: 3.5
+    env: TOXENV=py35
+  - python: 3.6
+    env: TOXENV=py36
+  # Enable 3.7 without globally enabling sudo and dist: xenial for other build jobs
+  - python: 3.7
+    dist: xenial
+    sudo: true
 
 # command to install dependencies   
 before_script:
