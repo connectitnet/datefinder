@@ -5,6 +5,14 @@ datefinder - extract dates from text
     :target: https://travis-ci.com/connectitnet/datefinder
     :alt: travis build status
 
+.. image:: https://api.codeclimate.com/v1/badges/b77a662901c82e0dcc73/test_coverage
+   :target: https://codeclimate.com/github/connectitnet/datefinder/test_coverage
+   :alt: Test Coverage
+
+.. image:: https://api.codeclimate.com/v1/badges/b77a662901c82e0dcc73/maintainability
+   :target: https://codeclimate.com/github/connectitnet/datefinder/maintainability
+   :alt: Maintainability
+
 .. image:: https://img.shields.io/gitter/room/nwjs/nw.js.svg
     :target: https://gitter.im/datefinder/Lobby
     :alt: gitter chat

@@ -86,7 +86,7 @@ setup(
     # $ pip install -e .[dev,test]
     extras_require={
         'dev': ['pytest>=2.8.5', 'mock', 'pytz>=2015.7', 'pylint==2.1.1'],
-        'test': ['pytest>=2.8.5', 'mock', 'pytz>=2015.7'],
+        'test': ['pytest>=2.8.5', 'mock', 'pytz>=2015.7', 'coverage', 'pytest-cov'],
     },
 
     # If there are data files included in your packages that need to be

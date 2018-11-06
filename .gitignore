@@ -14,5 +14,8 @@ venv/
 .tox
 .cache
 
+# coverage
+.coverage
+
 # IDE
 .vscode/
