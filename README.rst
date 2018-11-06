@@ -54,5 +54,5 @@ How to Use
 Support
 -------
 
-You can talk to us on `Gitter <https://gitter.im/datefinder/Lobby>`_ or just submit an issue on `github <https://github.com/akoumjian/connectitnet/issues/>`_. 
+You can talk to us on `Gitter <https://gitter.im/datefinder/Lobby>`_ or just submit an issue on `github <https://github.com/connectitnet/datefinder/issues/>`_. 
 
