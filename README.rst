@@ -1,17 +1,9 @@
 datefinder - extract dates from text
 ====================================
 
-.. image:: https://img.shields.io/travis/akoumjian/datefinder/master.svg
-    :target: https://travis-ci.org/akoumjian/datefinder
+.. image:: https://travis-ci.com/connectitnet/datefinder.svg?branch=master
+    :target: https://travis-ci.com/connectitnet/datefinder
     :alt: travis build status
-
-.. image:: https://img.shields.io/pypi/dm/datefinder.svg
-    :target: https://pypi.python.org/pypi/datefinder/
-    :alt: pypi downloads per day
-
-.. image:: https://img.shields.io/pypi/v/datefinder.svg
-    :target: https://pypi.python.org/pypi/datefinder
-    :alt: pypi version
 
 .. image:: https://img.shields.io/gitter/room/nwjs/nw.js.svg
     :target: https://gitter.im/datefinder/Lobby
@@ -31,18 +23,14 @@ Installation
 
 .. code-block:: sh
 
-    pip install datefinder
-
+    git pull https://github.com/connectitnet/datefinder.git
+    cd datefinder
+    pip install -e .
 
 How to Use
 ----------
 
-
-.. automodule:: datefinder
-   :members: find_dates
-
-
-.. code-block:: python
+.. code-block:: text
 
     In [1]: string_with_dates = """
        ...: ...
@@ -66,5 +54,5 @@ How to Use
 Support
 -------
 
-You can talk to us on `Gitter <https://gitter.im/datefinder/Lobby>`_ or just submit an issue on `github <https://github.com/akoumjian/datefinder/issues/>`_. 
+You can talk to us on `Gitter <https://gitter.im/datefinder/Lobby>`_ or just submit an issue on `github <https://github.com/akoumjian/connectitnet/issues/>`_. 
 
