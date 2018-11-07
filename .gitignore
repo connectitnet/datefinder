@@ -16,6 +16,7 @@ venv/
 
 # coverage
 .coverage
+coverage.xml
 
 # IDE
 .vscode/
