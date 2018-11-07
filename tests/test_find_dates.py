@@ -10,7 +10,7 @@ logger = logging.getLogger(__name__)
 
 @pytest.mark.parametrize('input_text, expected_date', [
     ## English Dates
-    #('[Sept] 04, 2014.', datetime(2014, 9, 4)),
+    ('Sept 04, 2014.', datetime(2014, 9, 4)),
     ('Tuesday Jul 22, 2014', datetime(2014, 7, 22)),
     #('10:04am EDT', datetime(2012, 11, 13, 14, 4)),
     #('Friday', datetime(2012, 11, 9)),
@@ -24,7 +24,7 @@ logger = logging.getLogger(__name__)
     ('8:25 a.m. Dec. 12, 2014', datetime(2014, 12, 12, 8, 25)),
     ('2:21 p.m., December 11, 2014', datetime(2014, 12, 11, 14, 21)),
     ('Fri, 12 Dec 2014 10:55:50', datetime(2014, 12, 12, 10, 55, 50)),
-    #('20 Mar 2013 10h11', datetime(2013, 3, 20, 10, 11)),
+    ('20 Mar 2013 18h11', datetime(2013, 3, 20, 18, 11)),
     ('10:06am Dec 11, 2014', datetime(2014, 12, 11, 10, 6)),
     ('May 5, 2010 to July 10, 2011', [datetime(2010, 5, 5), datetime(2011, 7, 10)]),
     #('19 February 2013 year 09:10', datetime(2013, 2, 19, 9, 10)),
@@ -54,6 +54,9 @@ logger = logging.getLogger(__name__)
     ("2017-02-03T09:04:08.001Z", datetime(2017, 2, 3, 9, 4, 8, 1000, tzinfo=pytz.utc)),
     ("2017-02-03T09:04:08,00123Z", datetime(2017, 2, 3, 9, 4, 8, 1230, tzinfo=pytz.utc)),
     ("2017-02-03T09:04:08Z", datetime(2017, 2, 3, 9, 4, 8, tzinfo=pytz.utc)),
+    # Year only strings, from https://github.com/akoumjian/datefinder/issues/96
+    ("Dutta is the recipient of Femina Miss India Universe title in 2004.", datetime(2004, 11, 7)),
+    ("she said that she hit depression after being traumatized on the sets of \"Horn OK\" in 2008.", datetime(2008, 11, 7)),
 ])
 def test_find_date_strings(input_text, expected_date):
     if isinstance(expected_date,list):

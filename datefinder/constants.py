@@ -56,6 +56,14 @@ TIME_PATTERN = r"""
         \s*
         (?P<timezones>{timezones})*
     )
+    |
+    ## Captures in format 18h34 (EST)
+    (
+        (?P<hours>\d{{1,2}})
+        h
+        (\:(?<seconds>\d{{1,2}}))?
+        ([\.\,](?<microseconds>\d{{1,6}}))?
+    )
 )
 """.format(
     time_periods=TIME_PERIOD_PATTERN,
