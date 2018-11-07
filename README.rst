@@ -31,7 +31,7 @@ Installation
 
 .. code-block:: sh
 
-    git install git+https://github.com/connectitnet/datefinder.git#egg=datefinder
+    pip install git+https://github.com/connectitnet/datefinder.git#egg=datefinder
 
 How to Use
 ----------
