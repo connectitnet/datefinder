@@ -31,9 +31,7 @@ Installation
 
 .. code-block:: sh
 
-    git pull https://github.com/connectitnet/datefinder.git
-    cd datefinder
-    pip install -e .
+    git install git+https://github.com/connectitnet/datefinder.git#egg=datefinder
 
 How to Use
 ----------
